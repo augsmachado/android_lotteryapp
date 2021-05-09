@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.augsmachado.lotteryapp.MainActivity">
+
+    <!-- Logo -->
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/lotto_generator_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- App name -->
+    <TextView
+        android:layout_width="327dp"
+        android:layout_height="58dp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="casual"
+        android:padding="8dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.147"
+        tools:ignore="MissingConstraints" />
+
+
+    <!-- Generate Button -->
+    <Button
+        android:id="@+id/generateButton"
+        android:layout_width="255dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="324dp"
+        android:backgroundTint="#5983FF"
+        android:fontFamily="casual"
+        android:padding="8dp"
+        android:text="@string/generate"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- Random numbers generated -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.602">
+
+        <TextView
+            android:id="@+id/firstNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:ellipsize="none"
+            android:fontFamily="casual"
+            android:padding="4dp"
+            android:text="01"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="243dp" />
+
+        <TextView
+            android:id="@+id/secondNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:ellipsize="none"
+            android:fontFamily="casual"
+            android:padding="4dp"
+            android:text="02"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="243dp" />
+
+        <TextView
+            android:id="@+id/thirdNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:ellipsize="none"
+            android:fontFamily="casual"
+            android:padding="4dp"
+            android:text="03"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="243dp" />
+
+        <TextView
+            android:id="@+id/fourthNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:ellipsize="none"
+            android:fontFamily="casual"
+            android:padding="4dp"
+            android:text="04"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="243dp" />
+
+        <TextView
+            android:id="@+id/fifthNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:ellipsize="none"
+            android:fontFamily="casual"
+            android:padding="4dp"
+            android:text="05"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="243dp" />
+
+    </LinearLayout>
+
+
+
+    <!-- First ball that need to insert value -->
+    <ImageView
+        android:id="@+id/firstBall"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="460dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.489"
+        app:srcCompat="@drawable/ic_circle_24" />
+
+    <EditText
+        android:id="@+id/firstBallInsert"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/firstBall"
+        app:layout_constraintEnd_toEndOf="@+id/firstBall"
+        app:layout_constraintHorizontal_bias="0.520"
+        app:layout_constraintStart_toStartOf="@+id/firstBall"
+        app:layout_constraintTop_toTopOf="@+id/firstBall"
+        app:layout_constraintVertical_bias="0.500" />
+
+    <!-- Second ball that need to insert value -->
+    <ImageView
+        android:id="@+id/secondBall"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="460dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.300"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.500"
+        app:srcCompat="@drawable/ic_circle_24" />
+
+    <EditText
+        android:id="@+id/secondBallInsert"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/secondBall"
+        app:layout_constraintEnd_toEndOf="@+id/secondBall"
+        app:layout_constraintHorizontal_bias="0.520"
+        app:layout_constraintStart_toStartOf="@+id/secondBall"
+        app:layout_constraintTop_toTopOf="@+id/secondBall"
+        app:layout_constraintVertical_bias="0.500" />
+
+    <!-- Third ball that need to insert value -->
+    <ImageView
+        android:id="@+id/thirdBall"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="460dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.500"
+        app:srcCompat="@drawable/ic_circle_24" />
+
+    <EditText
+        android:id="@+id/thirdBallInsert"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/thirdBall"
+        app:layout_constraintEnd_toEndOf="@+id/thirdBall"
+        app:layout_constraintHorizontal_bias="0.520"
+        app:layout_constraintStart_toStartOf="@+id/thirdBall"
+        app:layout_constraintTop_toTopOf="@+id/thirdBall"
+        app:layout_constraintVertical_bias="0.500" />
+
+    <!-- Fourth ball that need to insert value -->
+    <ImageView
+        android:id="@+id/fourthBall"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="460dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.700"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.500"
+        app:srcCompat="@drawable/ic_circle_24" />
+
+    <EditText
+        android:id="@+id/fourthBallInsert"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/fourthBall"
+        app:layout_constraintEnd_toEndOf="@+id/fourthBall"
+        app:layout_constraintHorizontal_bias="0.520"
+        app:layout_constraintStart_toStartOf="@+id/fourthBall"
+        app:layout_constraintTop_toTopOf="@+id/fourthBall"
+        app:layout_constraintVertical_bias="0.500" />
+
+    <!-- Fifth ball that need to insert value -->
+    <ImageView
+        android:id="@+id/fifthBall"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="460dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.900"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.500"
+        app:srcCompat="@drawable/ic_circle_24" />
+
+    <EditText
+        android:id="@+id/fifthBallInsert"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/fifthBall"
+        app:layout_constraintEnd_toEndOf="@+id/fifthBall"
+        app:layout_constraintHorizontal_bias="0.520"
+        app:layout_constraintStart_toStartOf="@+id/fifthBall"
+        app:layout_constraintTop_toTopOf="@+id/fifthBall"
+        app:layout_constraintVertical_bias="0.500" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
