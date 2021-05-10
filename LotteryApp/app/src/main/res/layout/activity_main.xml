@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.augsmachado.lotteryapp.MainActivity">
+
+
+
 
     <!-- Logo -->
     <ImageView
@@ -19,6 +23,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
+
     <!-- App name -->
     <TextView
         android:layout_width="327dp"
@@ -28,7 +35,7 @@
         android:layout_marginBottom="1dp"
         android:fontFamily="casual"
         android:padding="8dp"
-        android:text="@string/app_name"
+        android:text="@string/appName"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="36sp"
@@ -40,138 +47,28 @@
         tools:ignore="MissingConstraints" />
 
 
-    <!-- Generate Button -->
-    <Button
-        android:id="@+id/generateButton"
-        android:layout_width="255dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="324dp"
-        android:backgroundTint="#5983FF"
+
+
+    <!-- User input area -->
+    <TextView
+        android:id="@+id/chooseYourNumbersText"
+        android:layout_width="327dp"
+        android:layout_height="58dp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
         android:fontFamily="casual"
         android:padding="8dp"
-        android:text="@string/generate"
+        android:text="@string/chooseYourNumbers"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Reset Button -->
-    <Button
-        android:id="@+id/resetButton"
-        android:layout_width="255dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="324dp"
-        android:backgroundTint="#FF5959"
-        android:fontFamily="casual"
-        android:padding="8dp"
-        android:text="@string/reset"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <!-- Random numbers generated -->
-    <LinearLayout
-        android:id="@+id/generatedNumbers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.602">
-
-        <TextView
-            android:id="@+id/firstNumber"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:ellipsize="none"
-            android:fontFamily="casual"
-            android:padding="4dp"
-            android:text="01"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="42dp"
-            tools:layout_editor_absoluteY="243dp" />
-
-        <TextView
-            android:id="@+id/secondNumber"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:ellipsize="none"
-            android:fontFamily="casual"
-            android:padding="4dp"
-            android:text="02"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="42dp"
-            tools:layout_editor_absoluteY="243dp" />
-
-        <TextView
-            android:id="@+id/thirdNumber"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:clickable="false"
-            android:ellipsize="none"
-            android:fontFamily="casual"
-            android:padding="4dp"
-            android:text="03"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="42dp"
-            tools:layout_editor_absoluteY="243dp" />
-
-        <TextView
-            android:id="@+id/fourthNumber"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:ellipsize="none"
-            android:fontFamily="casual"
-            android:padding="4dp"
-            android:text="04"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="42dp"
-            tools:layout_editor_absoluteY="243dp" />
-
-        <TextView
-            android:id="@+id/fifthNumber"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:ellipsize="none"
-            android:fontFamily="casual"
-            android:padding="4dp"
-            android:text="05"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="42dp"
-            tools:layout_editor_absoluteY="243dp" />
-
-    </LinearLayout>
-
-
+        app:layout_constraintVertical_bias="0.270"
+        tools:ignore="MissingConstraints" />
 
     <!-- First ball that need to insert value -->
     <ImageView
@@ -312,5 +209,205 @@
         app:layout_constraintStart_toStartOf="@+id/fifthBall"
         app:layout_constraintTop_toTopOf="@+id/fifthBall"
         app:layout_constraintVertical_bias="0.500" />
+
+
+
+
+    <!-- Generate Button area -->
+    <Button
+        android:id="@+id/generateButton"
+        android:layout_width="255dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="300dp"
+        android:backgroundTint="#5983FF"
+        android:fontFamily="casual"
+        android:padding="8dp"
+        android:text="@string/generate"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Reset Button -->
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="255dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="300dp"
+        android:backgroundTint="#FF5959"
+        android:fontFamily="casual"
+        android:padding="8dp"
+        android:text="@string/reset"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <!-- Numbers Draws area -->
+    <TextView
+        android:id="@+id/numbersDrawnText"
+        android:layout_width="327dp"
+        android:layout_height="58dp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="casual"
+        android:padding="8dp"
+        android:text="@string/numbersDrawn"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.600"
+        tools:ignore="MissingConstraints" />
+
+    <!-- Random numbers generated -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.700">
+
+        <TextView
+            android:id="@+id/firstNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:ellipsize="none"
+            android:fontFamily="casual"
+            android:padding="4dp"
+            android:text="@string/_01"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="243dp" />
+
+        <TextView
+            android:id="@+id/secondNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:ellipsize="none"
+            android:fontFamily="casual"
+            android:padding="4dp"
+            android:text="@string/_02"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="243dp" />
+
+        <TextView
+            android:id="@+id/thirdNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:ellipsize="none"
+            android:fontFamily="casual"
+            android:padding="4dp"
+            android:text="@string/_03"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="243dp" />
+
+        <TextView
+            android:id="@+id/fourthNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:ellipsize="none"
+            android:fontFamily="casual"
+            android:padding="4dp"
+            android:text="@string/_04"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="243dp" />
+
+        <TextView
+            android:id="@+id/fifthNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:ellipsize="none"
+            android:fontFamily="casual"
+            android:padding="4dp"
+            android:text="@string/_05"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="243dp" />
+    </LinearLayout>
+
+
+
+    <!-- Results area -->
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="327dp"
+        android:layout_height="58dp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="casual"
+        android:padding="8dp"
+        android:text="@string/result"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.850"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/resultOfRaffle"
+        android:layout_width="327dp"
+        android:layout_height="58dp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="casual"
+        android:padding="8dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.950"
+        tools:ignore="MissingConstraints" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

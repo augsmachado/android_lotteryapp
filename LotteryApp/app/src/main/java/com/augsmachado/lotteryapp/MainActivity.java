@@ -88,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     private void raffle() {
         String randomNumber[] = new String[5];
 
@@ -133,9 +135,6 @@ public class MainActivity extends AppCompatActivity {
 
         return array;
     }
-
-
-
 
     private void bindViews() {
         mFirstNumber = (TextView) findViewById(R.id.firstNumber);

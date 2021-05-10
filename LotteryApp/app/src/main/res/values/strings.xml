@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lottery App</string>
+    <string name="appName">Lottery App</string>
 
     <!-- Buttons -->
     <string name="generate">Generate</string>
@@ -9,4 +9,19 @@
     <string name="chooseYourNumbers">Choose your numbers</string>
     <string name="numbersDrawn">Numbers drawn</string>
     <string name="result">Result</string>
+
+    <!-- Numbers Draws -->
+    <string name="_01">01</string>
+    <string name="_02">02</string>
+    <string name="_03">03</string>
+    <string name="_04">04</string>
+    <string name="_05">05</string>
+
+    <!-- Results -->
+    <string name="hit_00">00 hits</string>
+    <string name="hit_01">01 hit</string>
+    <string name="hit_02">02 hits</string>
+    <string name="hit_03">03 hits</string>
+    <string name="hit_04">04 hits</string>
+    <string name="hit_05">05 hits</string>
 </resources>
