@@ -11,9 +11,8 @@ import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class MainActivity extends AppCompatActivity {
-
     private TextView mFirstNumber, mSecondNumber, mThirdNumber, mFourthNumber, mFifthNumber;
-    private Button mGenerateButton;
+    private Button mGenerateButton, mResetButton;
 
     private String[] lotteryBalls = {
             "01", "02", "03", "04", "05", "06", "07", "08", "09", "10",
@@ -28,13 +27,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bindViews();
-        raffle();
+
+        final Button mGenerateButton = (Button) findViewById(R.id.generateButton);
+        mGenerateButton.setVisibility(View.VISIBLE);
+
+        final Button mResetButton = (Button) findViewById(R.id.resetButton);
 
 
         mGenerateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View view) {
+                mGenerateButton.setVisibility(View.GONE);
+                mResetButton.setVisibility(View.VISIBLE);
+
                 raffle();
+            }
+        });
+
+
+        mResetButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mGenerateButton.setVisibility(View.VISIBLE);
+                mResetButton.setVisibility(View.GONE);
+
+                mFirstNumber.setText("01");
+                mSecondNumber.setText("02");
+                mThirdNumber.setText("03");
+                mFourthNumber.setText("04");
+                mFifthNumber.setText("05");
             }
         });
 

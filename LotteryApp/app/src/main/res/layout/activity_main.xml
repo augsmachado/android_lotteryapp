@@ -57,9 +57,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Reset Button -->
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="255dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="324dp"
+        android:backgroundTint="#FF5959"
+        android:fontFamily="casual"
+        android:padding="8dp"
+        android:text="@string/reset"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <!-- Random numbers generated -->
     <LinearLayout
+        android:id="@+id/generatedNumbers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
