@@ -12,6 +12,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mFirstNumber, mSecondNumber, mThirdNumber, mFourthNumber, mFifthNumber;
+    //private TextView mNumbersDrawn, mResult, mRaffleHits;
     private Button mGenerateButton, mResetButton;
 
     private String[] lotteryBalls = {
@@ -43,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
         mFourthNumber.setVisibility(View.INVISIBLE);
         mFifthNumber.setVisibility(View.INVISIBLE);
 
+        //mNumbersDrawn.setVisibility(View.INVISIBLE);
+        //mResult.setVisibility(View.INVISIBLE);
+        //mRaffleHits.setVisibility(View.INVISIBLE);
+
 
 
 
@@ -51,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mGenerateButton.setVisibility(View.GONE);
                 mResetButton.setVisibility(View.VISIBLE);
+
+                //mNumbersDrawn.setVisibility(View.VISIBLE);
 
                 // Generate the numbers of raffle
                 raffle();
@@ -76,6 +83,11 @@ public class MainActivity extends AppCompatActivity {
                 mThirdNumber.setVisibility(View.INVISIBLE);
                 mFourthNumber.setVisibility(View.INVISIBLE);
                 mFifthNumber.setVisibility(View.INVISIBLE);
+
+                /* Hide results
+                mNumbersDrawn.setVisibility(View.INVISIBLE);
+                mResult.setVisibility(View.INVISIBLE);
+                mRaffleHits.setVisibility(View.INVISIBLE);*/
 
                 // Reset the raffle
                 mFirstNumber.setText("01");

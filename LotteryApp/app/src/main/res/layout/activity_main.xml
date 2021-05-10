@@ -389,7 +389,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/resultOfRaffle"
+        android:id="@+id/raffleHits"
         android:layout_width="327dp"
         android:layout_height="58dp"
         android:layout_margin="4dp"
