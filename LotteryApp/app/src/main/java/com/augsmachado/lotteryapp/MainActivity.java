@@ -25,21 +25,42 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         bindViews();
 
+        // Initialization of buttons
         final Button mGenerateButton = (Button) findViewById(R.id.generateButton);
-        mGenerateButton.setVisibility(View.VISIBLE);
-
         final Button mResetButton = (Button) findViewById(R.id.resetButton);
 
+        // Set initial visibility of app's components
+        mGenerateButton.setVisibility(View.VISIBLE);
+        mResetButton.setVisibility(View.GONE);
 
+        mFirstNumber.setVisibility(View.INVISIBLE);
+        mSecondNumber.setVisibility(View.INVISIBLE);
+        mThirdNumber.setVisibility(View.INVISIBLE);
+        mFourthNumber.setVisibility(View.INVISIBLE);
+        mFifthNumber.setVisibility(View.INVISIBLE);
+
+
+
+
+        // Buttons
         mGenerateButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 mGenerateButton.setVisibility(View.GONE);
                 mResetButton.setVisibility(View.VISIBLE);
 
+                // Generate the numbers of raffle
                 raffle();
+
+                // Show the raffle
+                mFirstNumber.setVisibility(View.VISIBLE);
+                mSecondNumber.setVisibility(View.VISIBLE);
+                mThirdNumber.setVisibility(View.VISIBLE);
+                mFourthNumber.setVisibility(View.VISIBLE);
+                mFifthNumber.setVisibility(View.VISIBLE);
             }
         });
 
@@ -49,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
                 mGenerateButton.setVisibility(View.VISIBLE);
                 mResetButton.setVisibility(View.GONE);
 
+                // Hide the numbers that was reset
+                mFirstNumber.setVisibility(View.INVISIBLE);
+                mSecondNumber.setVisibility(View.INVISIBLE);
+                mThirdNumber.setVisibility(View.INVISIBLE);
+                mFourthNumber.setVisibility(View.INVISIBLE);
+                mFifthNumber.setVisibility(View.INVISIBLE);
+
+                // Reset the raffle
                 mFirstNumber.setText("01");
                 mSecondNumber.setText("02");
                 mThirdNumber.setText("03");

@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Lottery App</string>
+
+    <!-- Buttons -->
     <string name="generate">Generate</string>
     <string name="reset">Reset</string>
+
+    <!-- User App journey -->
+    <string name="chooseYourNumbers">Choose your numbers</string>
+    <string name="numbersDrawn">Numbers drawn</string>
+    <string name="result">Result</string>
 </resources>
