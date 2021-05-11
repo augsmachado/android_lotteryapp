@@ -2,17 +2,20 @@ package com.augsmachado.lotteryapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mFirstNumber, mSecondNumber, mThirdNumber, mFourthNumber, mFifthNumber;
-    //private TextView mNumbersDrawn, mResult, mRaffleHits;
+    private TextView mNumbersDrawn, mResult, mRaffleHits;
     private Button mGenerateButton, mResetButton;
 
     private String[] lotteryBalls = {
@@ -26,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
         bindViews();
 
@@ -44,30 +46,30 @@ public class MainActivity extends AppCompatActivity {
         mFourthNumber.setVisibility(View.INVISIBLE);
         mFifthNumber.setVisibility(View.INVISIBLE);
 
-        //mNumbersDrawn.setVisibility(View.INVISIBLE);
-        //mResult.setVisibility(View.INVISIBLE);
-        //mRaffleHits.setVisibility(View.INVISIBLE);
-
-
 
 
         // Buttons
         mGenerateButton.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View view) {
-                mGenerateButton.setVisibility(View.GONE);
-                mResetButton.setVisibility(View.VISIBLE);
+                if (validateInput() == true){
+                    // Generate the numbers of raffle
+                    raffle();
 
-                //mNumbersDrawn.setVisibility(View.VISIBLE);
+                    mGenerateButton.setVisibility(View.GONE);
+                    mResetButton.setVisibility(View.VISIBLE);
 
-                // Generate the numbers of raffle
-                raffle();
+                    mNumbersDrawn.setVisibility(View.VISIBLE);
+                    mResult.setVisibility(View.VISIBLE);
+                    mRaffleHits.setVisibility(View.VISIBLE);
 
-                // Show the raffle
-                mFirstNumber.setVisibility(View.VISIBLE);
-                mSecondNumber.setVisibility(View.VISIBLE);
-                mThirdNumber.setVisibility(View.VISIBLE);
-                mFourthNumber.setVisibility(View.VISIBLE);
-                mFifthNumber.setVisibility(View.VISIBLE);
+                    // Show the raffle
+                    mFirstNumber.setVisibility(View.VISIBLE);
+                    mSecondNumber.setVisibility(View.VISIBLE);
+                    mThirdNumber.setVisibility(View.VISIBLE);
+                    mFourthNumber.setVisibility(View.VISIBLE);
+                    mFifthNumber.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -84,10 +86,10 @@ public class MainActivity extends AppCompatActivity {
                 mFourthNumber.setVisibility(View.INVISIBLE);
                 mFifthNumber.setVisibility(View.INVISIBLE);
 
-                /* Hide results
+                // Hide results
                 mNumbersDrawn.setVisibility(View.INVISIBLE);
                 mResult.setVisibility(View.INVISIBLE);
-                mRaffleHits.setVisibility(View.INVISIBLE);*/
+                mRaffleHits.setVisibility(View.INVISIBLE);
 
                 // Reset the raffle
                 mFirstNumber.setText("01");
@@ -98,6 +100,69 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private boolean validateInput() {
+
+        int duration = Toast.LENGTH_SHORT;
+
+        int array[] = new int[5];
+        String str[] = new String[5];
+
+        Context context = getApplicationContext();
+        CharSequence isRange = "The numbers must be between 1 to 50";
+        CharSequence isDifferent = "The numbers must be different";
+        CharSequence isEmpty = "Input numbers between 1 to 50";
+
+
+        EditText mFirstBallInsert = (EditText) findViewById(R.id.firstBallInsert);
+        EditText mSecondBallInsert = (EditText) findViewById(R.id.secondBallInsert);
+        EditText mThirdBallInsert = (EditText) findViewById(R.id.thirdBallInsert);
+        EditText mFourthBallInsert = (EditText) findViewById(R.id.fourthBallInsert);
+        EditText mFifthBallInsert = (EditText) findViewById(R.id.fifthBallInsert);
+
+
+        str[0] = mFirstBallInsert.getText().toString();
+        str[1] = mSecondBallInsert.getText().toString();
+        str[2] = mThirdBallInsert.getText().toString();
+        str[3] = mFourthBallInsert.getText().toString();
+        str[4] = mFifthBallInsert.getText().toString();
+
+        // Validate if the input is not empty
+        for(int i = 0; i < 5; i++) {
+            if (str[i].length() == 0) {
+                Toast.makeText(context, isEmpty, duration).show();
+                return false;
+            }
+        }
+
+
+        // Populate and order by array on asc
+        for(int i = 0; i < 5; i++) {
+            array[i] = Integer.parseInt(str[i]);
+        }
+        Arrays.sort(array);
+
+
+        // Validate if number is between 1 to 50
+        for(int i = 0; i < 5; i++) {
+            if(array[i] <= 0 || array[i] > 50) {
+                Toast.makeText(context, isRange, duration).show();
+                return false;
+            }
+        }
+
+        // Validate if numbers are different
+        for(int i = 0; i < 5; i++) {
+            for (int j = i+1; j < 5; j++) {
+                if(array[i] == array[j]) {
+                    Toast.makeText(context, isDifferent, duration).show();
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
 
@@ -148,13 +213,23 @@ public class MainActivity extends AppCompatActivity {
         return array;
     }
 
+
     private void bindViews() {
+        // Initialize the components in view
         mFirstNumber = (TextView) findViewById(R.id.firstNumber);
         mSecondNumber = (TextView) findViewById(R.id.secondNumber);
         mThirdNumber = (TextView) findViewById(R.id.thirdNumber);
         mFourthNumber = (TextView) findViewById(R.id.fourthNumber);
         mFifthNumber = (TextView) findViewById(R.id.fifthNumber);
 
+        mNumbersDrawn = (TextView) findViewById(R.id.numbersDrawnText);
+        mResult = (TextView) findViewById(R.id.resultText);
+        mRaffleHits = (TextView) findViewById(R.id.raffleHits);
+
         mGenerateButton = (Button) findViewById(R.id.generateButton);
+
+        mNumbersDrawn.setVisibility(View.INVISIBLE);
+        mResult.setVisibility(View.INVISIBLE);
+        mRaffleHits.setVisibility(View.INVISIBLE);
     }
 }
