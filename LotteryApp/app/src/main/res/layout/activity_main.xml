@@ -27,6 +27,9 @@
 
 
     <!-- App name -->
+
+
+    <!-- User input area -->
     <TextView
         android:layout_width="327dp"
         android:layout_height="58dp"
@@ -43,13 +46,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.147"
+        app:layout_constraintVertical_bias="0.114"
         tools:ignore="MissingConstraints" />
 
+    <!-- First ball that need to insert value -->
 
-
-
-    <!-- User input area -->
     <TextView
         android:id="@+id/chooseYourNumbersText"
         android:layout_width="327dp"
@@ -65,12 +66,12 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.270"
+        app:layout_constraintVertical_bias="0.232"
         tools:ignore="MissingConstraints" />
 
-    <!-- First ball that need to insert value -->
     <ImageView
         android:id="@+id/firstBall"
         android:layout_width="70dp"
@@ -214,11 +215,21 @@
 
 
     <!-- Generate Button area -->
+
+    <!-- Reset Button -->
+
+
+    <!-- Numbers Draws area -->
+
+    <!-- Random numbers generated -->
+
+
+    <!-- Results area -->
     <Button
         android:id="@+id/generateButton"
         android:layout_width="255dp"
         android:layout_height="61dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="312dp"
         android:backgroundTint="#5983FF"
         android:fontFamily="casual"
         android:padding="8dp"
@@ -230,12 +241,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Reset Button -->
     <Button
         android:id="@+id/resetButton"
         android:layout_width="255dp"
         android:layout_height="61dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="312dp"
         android:backgroundTint="#FF5959"
         android:fontFamily="casual"
         android:padding="8dp"
@@ -247,10 +257,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
-
-    <!-- Numbers Draws area -->
     <TextView
         android:id="@+id/numbersDrawnText"
         android:layout_width="327dp"
@@ -266,12 +272,12 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.600"
+        app:layout_constraintVertical_bias="0.621"
         tools:ignore="MissingConstraints" />
 
-    <!-- Random numbers generated -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -281,7 +287,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.700">
+        app:layout_constraintVertical_bias="0.706">
 
         <TextView
             android:id="@+id/firstNumber"
@@ -365,9 +371,6 @@
             tools:layout_editor_absoluteY="243dp" />
     </LinearLayout>
 
-
-
-    <!-- Results area -->
     <TextView
         android:id="@+id/resultText"
         android:layout_width="327dp"
