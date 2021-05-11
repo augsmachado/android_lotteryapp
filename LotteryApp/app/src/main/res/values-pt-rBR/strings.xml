@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appName">Lottery App</string>
+
+    <!-- Buttons -->
+    <string name="generate">Sorteio</string>
+    <string name="reset">Novo Sorteio</string>
+
+    <!-- User App Journey -->
+    <string name="chooseYourNumbers">Faça seu jogo</string>
+    <string name="numbersDrawn">Números sorteados</string>
+    <string name="result">Resultado</string>
+
+    <!-- Numbers Draws -->
+    <string name="_01">01</string>
+    <string name="_02">02</string>
+    <string name="_03">03</string>
+    <string name="_04">04</string>
+    <string name="_05">05</string>
+
+    <!-- Results -->
+    <string name="hit_00">Sem acertos</string>
+    <string name="hit_01">01 acerto</string>
+    <string name="hit_02">02 acertos</string>
+    <string name="hit_03">03 acertos</string>
+    <string name="hit_04">04 acertos</string>
+    <string name="hit_05">05 acertos</string>
+
+    <!-- Toast Messages -->
+    <string name="isRange">Os números devem ser entre 1 e 50</string>
+    <string name="isDifferent">Os números devem ser diferentes</string>
+    <string name="isEmpty">Insira 5 valores nos locais reservados</string>
+</resources>
