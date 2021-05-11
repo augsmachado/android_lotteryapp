@@ -108,6 +108,14 @@ public class MainActivity extends AppCompatActivity {
                 mFourthNumber.setText(str);
                 str = getResources().getString(R.string._05);
                 mFifthNumber.setText(str);
+
+                // Reset colors of generated numbers
+                mFirstNumber.setTextColor(getResources().getColor(R.color.black));
+                mSecondNumber.setTextColor(getResources().getColor(R.color.black));
+                mThirdNumber.setTextColor(getResources().getColor(R.color.black));
+                mFourthNumber.setTextColor(getResources().getColor(R.color.black));
+                mFifthNumber.setTextColor(getResources().getColor(R.color.black));
+
             }
         });
 
@@ -232,8 +240,29 @@ public class MainActivity extends AppCompatActivity {
         // Count hits
         for (int i = 0; i < 5; i++){
             for(int j = 0; j < 5; j++) {
-                if (inserted[i].equals(generated[j])) {
+                if (generated[i].equals(inserted[j])) {
                     sum++;
+
+                    // Change color of number generated if match with the number inserted
+                    switch (i) {
+                        case 0:
+                            mFirstNumber.setTextColor(getResources().getColor(R.color.teal_700));
+                            break;
+                        case 1:
+                            mSecondNumber.setTextColor(getResources().getColor(R.color.teal_700));
+                            break;
+                        case 2:
+                            mThirdNumber.setTextColor(getResources().getColor(R.color.teal_700));
+                            break;
+                        case 3:
+                            mFourthNumber.setTextColor(getResources().getColor(R.color.teal_700));
+                            break;
+                        case 4:
+                            mFifthNumber.setTextColor(getResources().getColor(R.color.teal_700));
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         }
