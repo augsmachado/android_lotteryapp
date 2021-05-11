@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context="com.augsmachado.lotteryapp.MainActivity">
 
-    
+
     <!-- Logo -->
     <ImageView
         android:layout_width="120dp"
@@ -20,7 +20,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
     <!-- App name -->
@@ -44,7 +43,6 @@
         tools:ignore="MissingConstraints" />
 
 
-
     <!-- User input area -->
     <TextView
         android:id="@+id/chooseYourNumbersText"
@@ -53,7 +51,7 @@
         android:layout_margin="4dp"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="1dp"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif-black"
         android:padding="8dp"
         android:text="@string/chooseYourNumbers"
         android:textAlignment="center"
@@ -208,9 +206,6 @@
         app:layout_constraintVertical_bias="0.500" />
 
 
-
-
-
     <!-- Generate Button area -->
     <Button
         android:id="@+id/generateButton"
@@ -218,7 +213,7 @@
         android:layout_height="61dp"
         android:layout_marginTop="312dp"
         android:backgroundTint="#5983FF"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif-black"
         android:padding="8dp"
         android:text="@string/generate"
         android:textAlignment="center"
@@ -234,7 +229,7 @@
         android:layout_height="61dp"
         android:layout_marginTop="312dp"
         android:backgroundTint="#FF5959"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif-black"
         android:padding="8dp"
         android:text="@string/reset"
         android:textAlignment="center"
@@ -245,8 +240,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
     <!-- Numbers Draws area -->
     <TextView
         android:id="@+id/numbersDrawnText"
@@ -255,7 +248,7 @@
         android:layout_margin="4dp"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="1dp"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif-black"
         android:padding="8dp"
         android:text="@string/numbersDrawn"
         android:textAlignment="center"
@@ -364,8 +357,6 @@
     </LinearLayout>
 
 
-
-
     <!-- Results area -->
     <TextView
         android:id="@+id/resultText"
@@ -374,7 +365,7 @@
         android:layout_margin="4dp"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="1dp"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif-black"
         android:padding="8dp"
         android:text="@string/result"
         android:textAlignment="center"
@@ -407,6 +398,19 @@
         app:layout_constraintVertical_bias="0.950"
         tools:ignore="MissingConstraints" />
 
+    <ImageView
+        android:id="@+id/win"
+        android:layout_width="206dp"
+        android:layout_height="293dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="381dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/win" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

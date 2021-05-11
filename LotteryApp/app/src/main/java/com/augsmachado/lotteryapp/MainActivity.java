@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mFirstNumber, mSecondNumber, mThirdNumber, mFourthNumber, mFifthNumber;
     private TextView mNumbersDrawn, mResult, mRaffleHits;
     private EditText mFirstBallInsert, mSecondBallInsert, mThirdBallInsert, mFourthBallInsert, mFifthBallInsert;
+    private ImageView mWin;
     private Button mGenerateButton, mResetButton;
 
 
@@ -51,8 +53,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Buttons
-        mGenerateButton.setOnClickListener(new View.OnClickListener() {
+        mWin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mWin.setVisibility(View.INVISIBLE);
+            }
+        });
 
+        mGenerateButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 if (validateInput() == true){
                     // Generate the numbers of raffle
@@ -84,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
                 mGenerateButton.setVisibility(View.VISIBLE);
                 mResetButton.setVisibility(View.GONE);
 
+                // Hide image win
+                mWin.setVisibility(View.INVISIBLE);
+
                 // Hide the numbers that was reset
                 mFirstNumber.setVisibility(View.INVISIBLE);
                 mSecondNumber.setVisibility(View.INVISIBLE);
@@ -95,6 +105,14 @@ public class MainActivity extends AppCompatActivity {
                 mNumbersDrawn.setVisibility(View.INVISIBLE);
                 mResult.setVisibility(View.INVISIBLE);
                 mRaffleHits.setVisibility(View.INVISIBLE);
+
+                // Reset the inserted numbers
+                mFirstBallInsert.setText("");
+                mSecondBallInsert.setText("");
+                mThirdBallInsert.setText("");
+                mFourthBallInsert.setText("");
+                mFifthBallInsert.setText("");
+
 
                 // Reset the raffle
                 String str;
@@ -293,6 +311,8 @@ public class MainActivity extends AppCompatActivity {
             case 5:
                 hits = getResources().getString(R.string.hit_05);
                 mRaffleHits.setText(hits);
+
+                mWin.setVisibility(View.VISIBLE);
                 break;
             default:
                 break;
@@ -310,14 +330,16 @@ public class MainActivity extends AppCompatActivity {
 
         mGenerateButton = (Button) findViewById(R.id.generateButton);
 
-
         mNumbersDrawn = (TextView) findViewById(R.id.numbersDrawnText);
         mResult = (TextView) findViewById(R.id.resultText);
         mRaffleHits = (TextView) findViewById(R.id.raffleHits);
 
+        mWin = (ImageView) findViewById(R.id.win);
+
         mNumbersDrawn.setVisibility(View.INVISIBLE);
         mResult.setVisibility(View.INVISIBLE);
         mRaffleHits.setVisibility(View.INVISIBLE);
+        mWin.setVisibility(View.INVISIBLE);
 
 
         mFirstNumber = (TextView) findViewById(R.id.firstNumber);
