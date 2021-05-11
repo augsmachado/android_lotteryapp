@@ -62,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
                     mResetButton.setVisibility(View.VISIBLE);
 
                     mNumbersDrawn.setVisibility(View.VISIBLE);
-                    mResult.setVisibility(View.VISIBLE);
-                    mRaffleHits.setVisibility(View.VISIBLE);
 
                     // Show the raffle
                     mFirstNumber.setVisibility(View.VISIBLE);
@@ -71,6 +69,11 @@ public class MainActivity extends AppCompatActivity {
                     mThirdNumber.setVisibility(View.VISIBLE);
                     mFourthNumber.setVisibility(View.VISIBLE);
                     mFifthNumber.setVisibility(View.VISIBLE);
+
+                    // Show hits
+                    isMatchOnRaffle();
+                    mResult.setVisibility(View.VISIBLE);
+                    mRaffleHits.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -94,11 +97,17 @@ public class MainActivity extends AppCompatActivity {
                 mRaffleHits.setVisibility(View.INVISIBLE);
 
                 // Reset the raffle
-                mFirstNumber.setText("01");
-                mSecondNumber.setText("02");
-                mThirdNumber.setText("03");
-                mFourthNumber.setText("04");
-                mFifthNumber.setText("05");
+                String str;
+                str = getResources().getString(R.string._01);
+                mFirstNumber.setText(str);
+                str = getResources().getString(R.string._02);
+                mSecondNumber.setText(str);
+                str = getResources().getString(R.string._03);
+                mThirdNumber.setText(str);
+                str = getResources().getString(R.string._04);
+                mFourthNumber.setText(str);
+                str = getResources().getString(R.string._05);
+                mFifthNumber.setText(str);
             }
         });
 
@@ -111,9 +120,9 @@ public class MainActivity extends AppCompatActivity {
         String str[] = new String[5];
 
         Context context = getApplicationContext();
-        CharSequence isRange = "The numbers must be between 1 to 50";
-        CharSequence isDifferent = "The numbers must be different";
-        CharSequence isEmpty = "The input mustn't empty";
+        CharSequence isRange = getResources().getString(R.string.isRange);
+        CharSequence isDifferent = getResources().getString(R.string.isDifferent);
+        CharSequence isEmpty = getResources().getString(R.string.isEmpty);
 
         str[0] = mFirstBallInsert.getText().toString();
         str[1] = mSecondBallInsert.getText().toString();
@@ -201,6 +210,64 @@ public class MainActivity extends AppCompatActivity {
         // Order by array on asc
         Arrays.sort(array);
         return array;
+    }
+
+    public void isMatchOnRaffle() {
+        String inserted[] = new String[5];
+        String generated[] = new String[5];
+        int sum = 0;
+
+        inserted[0] = mFirstBallInsert.getText().toString();
+        inserted[1] = mSecondBallInsert.getText().toString();
+        inserted[2] = mThirdBallInsert.getText().toString();
+        inserted[3] = mFourthBallInsert.getText().toString();
+        inserted[4] = mFifthBallInsert.getText().toString();
+
+        generated[0] = mFirstNumber.getText().toString();
+        generated[1] = mSecondNumber.getText().toString();
+        generated[2] = mThirdNumber.getText().toString();
+        generated[3] = mFourthNumber.getText().toString();
+        generated[4] = mFifthNumber.getText().toString();
+
+        // Count hits
+        for (int i = 0; i < 5; i++){
+            for(int j = 0; j < 5; j++) {
+                if (inserted[i].equals(generated[j])) {
+                    sum++;
+                }
+            }
+        }
+
+        // Set text hits
+        String hits;
+        switch (sum) {
+            case 0:
+                hits = getResources().getString(R.string.hit_00);
+                mRaffleHits.setText(hits);
+                break;
+            case 1:
+                hits = getResources().getString(R.string.hit_01);
+                mRaffleHits.setText(hits);
+                break;
+            case 2:
+                hits = getResources().getString(R.string.hit_02);
+                mRaffleHits.setText(hits);
+                break;
+            case 3:
+                hits = getResources().getString(R.string.hit_03);
+                mRaffleHits.setText(hits);
+                break;
+            case 4:
+                hits = getResources().getString(R.string.hit_04);
+                mRaffleHits.setText(hits);
+                break;
+            case 5:
+                hits = getResources().getString(R.string.hit_05);
+                mRaffleHits.setText(hits);
+                break;
+            default:
+                break;
+        }
     }
 
 

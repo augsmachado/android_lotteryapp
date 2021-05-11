@@ -5,7 +5,7 @@
     <string name="generate">Generate</string>
     <string name="reset">Reset</string>
 
-    <!-- User App journey -->
+    <!-- User App Journey -->
     <string name="chooseYourNumbers">Choose your numbers</string>
     <string name="numbersDrawn">Numbers drawn</string>
     <string name="result">Result</string>
@@ -24,4 +24,9 @@
     <string name="hit_03">03 hits</string>
     <string name="hit_04">04 hits</string>
     <string name="hit_05">05 hits</string>
+
+    <!-- Toast Messages -->
+    <string name="isRange">The numbers must be between 1 to 50</string>
+    <string name="isDifferent">The numbers must be different</string>
+    <string name="isEmpty">The input must not empty</string>
 </resources>
