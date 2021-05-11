@@ -16,7 +16,9 @@ import java.util.concurrent.ThreadLocalRandom;
 public class MainActivity extends AppCompatActivity {
     private TextView mFirstNumber, mSecondNumber, mThirdNumber, mFourthNumber, mFifthNumber;
     private TextView mNumbersDrawn, mResult, mRaffleHits;
+    private EditText mFirstBallInsert, mSecondBallInsert, mThirdBallInsert, mFourthBallInsert, mFifthBallInsert;
     private Button mGenerateButton, mResetButton;
+
 
     private String[] lotteryBalls = {
             "01", "02", "03", "04", "05", "06", "07", "08", "09", "10",
@@ -103,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean validateInput() {
-
         int duration = Toast.LENGTH_SHORT;
 
         int array[] = new int[5];
@@ -112,15 +113,7 @@ public class MainActivity extends AppCompatActivity {
         Context context = getApplicationContext();
         CharSequence isRange = "The numbers must be between 1 to 50";
         CharSequence isDifferent = "The numbers must be different";
-        CharSequence isEmpty = "Input numbers between 1 to 50";
-
-
-        EditText mFirstBallInsert = (EditText) findViewById(R.id.firstBallInsert);
-        EditText mSecondBallInsert = (EditText) findViewById(R.id.secondBallInsert);
-        EditText mThirdBallInsert = (EditText) findViewById(R.id.thirdBallInsert);
-        EditText mFourthBallInsert = (EditText) findViewById(R.id.fourthBallInsert);
-        EditText mFifthBallInsert = (EditText) findViewById(R.id.fifthBallInsert);
-
+        CharSequence isEmpty = "The input mustn't empty";
 
         str[0] = mFirstBallInsert.getText().toString();
         str[1] = mSecondBallInsert.getText().toString();
@@ -136,11 +129,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-
         // Populate and order by array on asc
-        for(int i = 0; i < 5; i++) {
-            array[i] = Integer.parseInt(str[i]);
-        }
+        for(int i = 0; i < 5; i++) array[i] = Integer.parseInt(str[i]);
         Arrays.sort(array);
 
 
@@ -162,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        // If pass in all validation
         return true;
     }
 
@@ -209,27 +200,34 @@ public class MainActivity extends AppCompatActivity {
 
         // Order by array on asc
         Arrays.sort(array);
-
         return array;
     }
 
 
     private void bindViews() {
         // Initialize the components in view
-        mFirstNumber = (TextView) findViewById(R.id.firstNumber);
-        mSecondNumber = (TextView) findViewById(R.id.secondNumber);
-        mThirdNumber = (TextView) findViewById(R.id.thirdNumber);
-        mFourthNumber = (TextView) findViewById(R.id.fourthNumber);
-        mFifthNumber = (TextView) findViewById(R.id.fifthNumber);
+        mFirstBallInsert = (EditText) findViewById(R.id.firstBallInsert);
+        mSecondBallInsert = (EditText) findViewById(R.id.secondBallInsert);
+        mThirdBallInsert = (EditText) findViewById(R.id.thirdBallInsert);
+        mFourthBallInsert = (EditText) findViewById(R.id.fourthBallInsert);
+        mFifthBallInsert = (EditText) findViewById(R.id.fifthBallInsert);
+
+        mGenerateButton = (Button) findViewById(R.id.generateButton);
+
 
         mNumbersDrawn = (TextView) findViewById(R.id.numbersDrawnText);
         mResult = (TextView) findViewById(R.id.resultText);
         mRaffleHits = (TextView) findViewById(R.id.raffleHits);
 
-        mGenerateButton = (Button) findViewById(R.id.generateButton);
-
         mNumbersDrawn.setVisibility(View.INVISIBLE);
         mResult.setVisibility(View.INVISIBLE);
         mRaffleHits.setVisibility(View.INVISIBLE);
+
+
+        mFirstNumber = (TextView) findViewById(R.id.firstNumber);
+        mSecondNumber = (TextView) findViewById(R.id.secondNumber);
+        mThirdNumber = (TextView) findViewById(R.id.thirdNumber);
+        mFourthNumber = (TextView) findViewById(R.id.fourthNumber);
+        mFifthNumber = (TextView) findViewById(R.id.fifthNumber);
     }
 }
